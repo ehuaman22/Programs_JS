@@ -1,10 +1,30 @@
 
-//Example
+// import readline module
+const readline = require("readline");
 
-var currentWord = 'ooooksasasalk';
+// create interface for input and output
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-console.log('Current Word: ' + currentWord)
-console.log('Result: ' + calculateWord(currentWord));
+// create var user input called 'currentWord'
+let currentWord = "";
+
+// user to enter the word
+rl.question("\nPlease input one word: ", function (string) {
+	
+	//currentWord
+	currentWord = string;
+
+	console.log('Current Word: ' + currentWord)
+	console.log('Result: ' + calculateWord(currentWord));
+
+  // close input stream
+  rl.close();
+  
+});
+
 
 
 //Function Calulate Word
